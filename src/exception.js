@@ -1,3 +1,11 @@
+/**
+ * Exception module.
+ *
+ * @module js/lang/Exception
+ *
+ * @version 1.0.0
+ * @author Richard King <richrdkng@gmail.com>
+ */
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -12,8 +20,19 @@
         root.Exception = factory();
   }
 }(this, function () {
-    var EXCEPTION_NAME  = 'Exception',
-        DISALLOWED_KEYS = [
+    /**
+     * @private
+     * @const {string} EXCEPTION_NAME Description of the constant
+     * @memberOf module:js/lang/Exception.Exception
+     */
+    var EXCEPTION_NAME = 'Exception';
+
+    /**
+     * @private
+     * @const {Array} DISALLOWED_KEYS Descripton of disall
+     * @memberOf module:js/lang/Exception.Exception
+     */
+    var DISALLOWED_KEYS = [
             'name',
             'stack',
             '_id',
@@ -22,6 +41,14 @@
             '_originalArguments'
         ];
 
+    /**
+     * A private function to format Exception messages.
+     *
+     * @private
+     * @function format
+     *
+     * @param {string} message
+     */
     function format(message) {
         var pattern = /(\{)(\d*)(\})/g,
             args    = arguments,
@@ -40,6 +67,16 @@
         });
     }
 
+    /**
+     * Constructor of the Exception Message
+     *
+     * @private
+     * @class Message
+     * @memberOf module:js/lang/Exception
+     *
+     * @param {string} message
+     * @param {int}    id
+     */
     function Message(message, id) {
         this._message = message;
         this._id = id;
@@ -47,14 +84,40 @@
 
     Message.prototype = {
         constructor : Message,
+
+        /**
+         * @instance
+         * @function getMessage
+         * @memberOf module:js/lang/Exception.Message
+         *
+         * @returns {string}
+         */
         getMessage : function() {
             return this._message;
         },
+
+        /**
+         * @instance
+         * @function getID
+         * @memberOf module:js/lang/Exception.Message
+         *
+         * @returns {number}
+         */
         getID : function() {
             return this._id;
         }
     };
 
+    /**
+     * Constructor of the Exception
+     *
+     * @class Exception
+     * @memberOf module:js/lang/Exception
+     *
+     * @param {string|Message} [message]
+     * @param {int}            [id]
+     * @param {Array}          [args]
+     */
     function Exception(message, id, args) {
         var name              = EXCEPTION_NAME,
             originalMessage   = '',
@@ -102,16 +165,47 @@
 
     Exception.prototype = Object.create(Error.prototype);
     Exception.prototype.constructor = Exception;
+
+    /**
+     * @instance
+     * @function getMessage
+     * @memberOf module:js/lang/Exception.Exception
+     *
+     * @returns {string}
+     */
     Exception.prototype.getMessage = function() {
         return this._message;
     };
+
+    /**
+     * @instance
+     * @function getID
+     * @memberOf module:js/lang/Exception.Exception
+     *
+     * @returns {number}
+     */
     Exception.prototype.getID = function() {
         return this._id;
     };
 
-    Exception.messageFrom = function(message, id) {
+    /**
+     * Creates an Exception message from a message string and from an ID.
+     *
+     * @static
+     * @function messageFrom
+     * @memberOf module:js/lang/Exception.Exception
+     *
+     * @param {string} message
+     * @param {number} id
+     *
+     * @returns {Message}
+     */
+    Exception.messageFrom = function (message, id) {
         return new Message(message, id);
     };
 
+    /**
+     * @exports js/lang/Exception.Exception
+     */
     return Exception;
 }));
