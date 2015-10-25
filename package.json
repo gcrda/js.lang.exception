@@ -1,0 +1,33 @@
+{
+  "name": "@gcrda/exception",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/gcrda/js.lang.Exception#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcrda/js.lang.Exception.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gcrda/js.lang.Exception/issues"
+  },
+  "main": "dist/exception.js",
+  "scripts": {
+    "gulp": "gulp --gulpfile task/main.js",
+    "test-phantomjs": "gulp --gulpfile task/main.js -- test-phantomjs",
+    "doc": "jsdoc"
+  },
+  "devDependencies": {
+    "amdefine": "^1.0.0",
+    "chai": "^3.4.0",
+    "gulp": "^3.9.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-mocha": "^2.1.3",
+    "gulp-mocha-phantomjs": "^0.10.1",
+    "gulp-sequence": "^0.4.1",
+    "jsdoc": "^3.3.3",
+    "mocha": "^2.3.3",
+    "requirejs": "^2.1.20"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "js.lang.Exception",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gcrda/js.lang.Exception",
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
