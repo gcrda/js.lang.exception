@@ -27,6 +27,6 @@ var ERROR = Exception.messageFrom('An exception {2}', 123);
 try {
     throw new Exception(ERROR, 1, 2, 3);
 } catch(exception) {
-    console.log(exception);
-    //console.log(exception.stack);
+    //console.log(exception);
+    console.log(exception.stack);
 }
