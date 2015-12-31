@@ -1,0 +1,15 @@
+# Dependency directory
+node_modules
+
+# project folder
+project
+
+# tasks folder
+tasks
+
+# tests folder
+tests
+
+.editorconfig
+.gitattributes
+.gitignore
