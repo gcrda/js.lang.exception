@@ -1,1 +1,1 @@
-# js.lang.Exception
+# js.lang.exception

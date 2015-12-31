@@ -18,27 +18,21 @@ gulp.task('default', function() {
 });
 
 gulp.task('test-amd', function() {
-    return (
-        gulp
-            .src(test + 'AMD/test.html', {read: false})
-            .pipe(phantom({reporter: 'spec'}))
-    );
+    gulp
+        .src(test + 'amd/test.html', {read: false})
+        .pipe(phantom({reporter: 'spec'}));
 });
 
 gulp.task('test-commonjs', function() {
-    return (
-        gulp
-            .src(test + 'CommonJS/test.js', {read: false})
-            .pipe(mocha())
-    );
+    gulp
+        .src(test + 'cjs/test.js', {read: false})
+        .pipe(mocha());
 });
 
 gulp.task('test-global', function() {
-    return (
-        gulp
-            .src(test + 'Global/test.html', {read: false})
-            .pipe(phantom({reporter: 'spec'}))
-    );
+    gulp
+        .src(test + 'browser/test.html', {read: false})
+        .pipe(phantom({reporter: 'spec'}));
 });
 
 gulp.task('test', sequence('test-commonjs', 'test-amd', 'test-global'));

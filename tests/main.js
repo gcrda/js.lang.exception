@@ -16,7 +16,6 @@
             });
 
             describe('check proper export from UMD', function() {
-
                 it('should have the properties', function() {
                     assert(1 === 1);
                 });
