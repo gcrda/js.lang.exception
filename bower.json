@@ -1,7 +1,7 @@
 {
-  "name": "js.lang.Exception",
-  "version": "0.0.0",
-  "homepage": "https://github.com/gcrda/js.lang.Exception",
+  "name": "js.lang.exception",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gcrda/js.lang.exception",
   "description": "",
   "main": "",
   "moduleType": [
